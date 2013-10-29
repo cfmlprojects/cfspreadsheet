@@ -1,0 +1,37 @@
+body {
+	margin: 3%;
+}
+body.example {
+	margin: 0;
+	padding: 0;
+}
+body, h1, h2, h3 {
+   font-family: verdana, helvetica, arial;
+}
+body, h3, li, a {
+   font-size: small;
+}
+
+.container {
+	width: 100%;
+}
+
+.leftCol {
+	width: 35%;
+	float: left;
+	overflow: hidden;
+}
+.rightCol {
+	margin: 10px;
+	width: 60%;
+	float: right;
+	overflow: auto;
+}
+
+code, pre {
+   border: 1px solid #888888; 
+   font-family: courier, monospace;
+   font-size: x-small;
+   overflow: auto;
+   padding: 3px;
+}
