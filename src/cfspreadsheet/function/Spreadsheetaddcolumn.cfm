@@ -1,6 +1,6 @@
 <!--- Compatibility note: ACF does not yet support a "delimiter" argument --->
 <cffunction name="SpreadsheetAddColumn" returntype="void" output="false">
-	<cfargument name="spreadsheet" type="ext.cfspreadsheet.cfc.poi" required="true" />
+	<cfargument name="spreadsheet" type="cfspreadsheet.tag.cfspreadsheet.cfc.poi" required="true" />
 	<cfargument name="data" type="string" required="true" hint="Delimited list of values" />
 	<cfargument name="startRow" type="numeric" required="false" />
 	<cfargument name="startColumn" type="numeric" required="false" />
@@ -8,7 +8,7 @@
 	<cfargument name="delimiter" type="string" required="false" default="," />
 	
 	<cfif StructKeyExists(arguments, "startRow") and not StructKeyExists(arguments, "startColumn")>
-		<cfthrow type="ext.cfspreadsheet.cfc.poi" 
+		<cfthrow type="cfspreadsheet.tag.cfspreadsheet.cfc.poi" 
 				message="Invalid Argument Combination" 
 				detail="If a StartRow is specified, StartColumn is required." />
 	</cfif>

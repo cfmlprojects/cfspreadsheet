@@ -1,7 +1,7 @@
 <!--- Modified the argument order for ACF compatibility. But the original
 	order made more sense. --->
 <cffunction name="SpreadsheetMergeCells" returntype="void" output="false">
-	<cfargument name="spreadsheet" type="ext.cfspreadsheet.cfc.poi" required="true" />
+	<cfargument name="spreadsheet" type="cfspreadsheet.tag.cfspreadsheet.cfc.poi" required="true" />
 	<cfargument name="startRow" type="numeric" required="true" />
 	<cfargument name="endRow" type="numeric" required="true" />
 	<cfargument name="startColumn" type="numeric" required="true" />

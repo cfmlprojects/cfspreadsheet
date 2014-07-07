@@ -11,7 +11,7 @@
 	<cfargument name="sheet" type="numeric" required="false" hint="Sheet number to activate" />
 	
 	<cfif structKeyExists(arguments, "sheetName") and structKeyExists(arguments, "sheet")>
-			<cfthrow type="ext.cfspreadsheet.cfc.poi" 
+			<cfthrow type="cfspreadsheet.tag.cfspreadsheet.cfc.poi" 
 					message="Invalid Argument Combination" 
 					detail="Either specify a 'SheetName' OR 'Sheet', but not both.">
 	</cfif>	
@@ -21,10 +21,10 @@
 		accepts sheetName and sheet index) let's throw an error 
 		if too many arguments are supplied --->
 	<cfif structCount( arguments ) gt 1>		
-		<cfthrow type="ext.cfspreadsheet.cfc.poi" 
+		<cfthrow type="cfspreadsheet.tag.cfspreadsheet.cfc.poi" 
 					message="Too Many Arguments" 
 					detail="SpreadsheetRead() only supports a 'src' argument" />
 	</cfif>
 			
-	<cfreturn CreateObject("component", "ext.cfspreadsheet.cfc.poi").init( argumentCollection=arguments ) />
+	<cfreturn CreateObject("component", "cfspreadsheet.tag.cfspreadsheet.cfc.poi").init( argumentCollection=arguments ) />
 </cffunction>

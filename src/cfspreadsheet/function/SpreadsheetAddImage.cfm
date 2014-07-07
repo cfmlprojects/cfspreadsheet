@@ -1,5 +1,5 @@
 <cffunction name="SpreadsheetAddImage" returntype="void" output="false">
-	<cfargument name="spreadsheet" type="ext.cfspreadsheet.cfc.poi" required="true" />
+	<cfargument name="spreadsheet" type="cfspreadsheet.tag.cfspreadsheet.cfc.poi" required="true" />
 	<cfargument name="arg2" type="any" required="false" />
 	<cfargument name="arg3" type="string" required="false" />
 	<cfargument name="arg4" type="string" required="false" />
@@ -16,7 +16,7 @@
 		<cfset args.imageType = arguments.arg3 />
 		<cfset args.anchor = arguments.arg4 />
 	<cfelse>
-		<cfthrow type="ext.cfspreadsheet.cfc.poi" 
+		<cfthrow type="cfspreadsheet.tag.cfspreadsheet.cfc.poi" 
 					message="Invalid Argument Combination" 
 					detail="SpreadsheetAddImage() takes either 3 or 4 parameters" />
 	</cfif>

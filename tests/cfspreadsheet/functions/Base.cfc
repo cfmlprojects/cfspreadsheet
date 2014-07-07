@@ -1,5 +1,6 @@
 <cfcomponent extends="mxunit.framework.TestCase">
 
+<!--- 
 	<cffunction name="beforeTests" returntype="void" access="public">
 		<cfset var Local = {}>
 		<!--- add a few values --->
@@ -29,5 +30,6 @@
 			</cfcatch>
 		</cftry>
 	</cffunction>
+ --->
 
 </cfcomponent>

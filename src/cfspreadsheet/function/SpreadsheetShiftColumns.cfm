@@ -1,5 +1,5 @@
 <cffunction name="SpreadsheetShiftColumns" returntype="void" output="false">
-	<cfargument name="spreadsheet" type="ext.cfspreadsheet.cfc.poi" required="true" />
+	<cfargument name="spreadsheet" type="cfspreadsheet.tag.cfspreadsheet.cfc.poi" required="true" />
 	<cfargument name="start" type="numeric" required="true" />
 	<cfargument name="end" type="numeric" required="false" />
 	<cfargument name="columns" type="numeric" required="false" />

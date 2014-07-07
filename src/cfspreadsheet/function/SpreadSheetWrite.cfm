@@ -3,7 +3,7 @@
 --->
 <cffunction name="SpreadsheetWrite" returntype="void" output="false"
 			Hint="Write a spreadsheet to disk.">
-	<cfargument name="spreadsheet" type="ext.cfspreadsheet.cfc.poi" required="true" hint="Target Spreadsheet" />
+	<cfargument name="spreadsheet" type="cfspreadsheet.tag.cfspreadsheet.cfc.poi" required="true" hint="Target Spreadsheet" />
 	<cfargument name="filePath" type="string" required="true" hint="Full path to the output file" />
 	<cfargument name="overwrite" type="boolean" default="false" hint="Specify true to overwrite the file if it already exists." />
 	
@@ -15,7 +15,7 @@
 	Note: Currently POI does not support passwords for the xlsx format. 
 	--->	
 	<cfif structKeyExists(arguments, "password") or structCount(arguments) gt 3>
-		<cfthrow type="ext.cfspreadsheet.cfc.poi" 
+		<cfthrow type="cfspreadsheet.tag.cfspreadsheet.cfc.poi" 
 					message="Invalid or Unsupported Arguments" 
 					detail="SpreadsheetWrite only supports the following arguments: SpreadSheet, FileName and Overwrite" />
 	</cfif>

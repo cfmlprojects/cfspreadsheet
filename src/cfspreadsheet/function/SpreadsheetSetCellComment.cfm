@@ -17,7 +17,7 @@
 		* visible
 --->
 <cffunction name="SpreadsheetSetCellComment" returntype="void" output="false">
-	<cfargument name="spreadsheet" type="ext.cfspreadsheet.cfc.poi" required="true" />
+	<cfargument name="spreadsheet" type="cfspreadsheet.tag.cfspreadsheet.cfc.poi" required="true" />
 	<cfargument name="comment" type="struct" required="true" />
 	<cfargument name="row" type="numeric" required="true" />
 	<cfargument name="column" type="numeric" required="true" />

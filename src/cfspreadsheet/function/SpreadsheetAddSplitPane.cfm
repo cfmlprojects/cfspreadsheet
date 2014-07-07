@@ -1,5 +1,5 @@
 <cffunction name="SpreadsheetAddSplitPane" returntype="void" output="false">
-	<cfargument name="spreadsheet" type="ext.cfspreadsheet.cfc.poi" required="true" />
+	<cfargument name="spreadsheet" type="cfspreadsheet.tag.cfspreadsheet.cfc.poi" required="true" />
 	<cfargument name="xpos" type="numeric" required="true" />
 	<cfargument name="ypos" type="numeric" required="true" />
 	<cfargument name="splitcol" type="numeric" required="true" />

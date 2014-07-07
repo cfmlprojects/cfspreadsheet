@@ -1,6 +1,6 @@
 <!--- TODO: null pointer exception issue --->
 <cffunction name="SpreadsheetInfo" returntype="struct" output="false">
-	<cfargument name="spreadsheet" type="ext.cfspreadsheet.cfc.poi" required="true" />
+	<cfargument name="spreadsheet" type="cfspreadsheet.tag.cfspreadsheet.cfc.poi" required="true" />
 
 	<!--- Returns a struct containing the following keys:
 			* author

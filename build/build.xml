@@ -4,31 +4,23 @@
 	<import file="${cfdistro.build.file}"/>
 
 	<target name="build" depends="cfdistro.build">
-		<!-- add mappings -->
-		<!--
-		<mapping physical="${basedir}/../../docs" virtual="/docs"/>
 		<mapping physical="${basedir}/../tests" virtual="/tests"/>
-		-->
-		<mapping physical="${basedir}/../tests" virtual="/tests"/>
-		<!-- add custom tags example
-		<customtag physical="${src.dir}/cfdistro/ext/cfmltags/cfantrunner" virtual="/cfantrunner"/>
-		 -->
-		<!-- use fileServlet to map external resources (css, images, etc.) -->
-		<!--
-		<fileservlet servletname="fileServlet" directory="${src.dir}/../pub" urlpattern="/pub/*"/>
-		<mapping physical="${basedir}/../pub" virtual="/pub"/>
-		-->
-		<!-- add urlrewrite filter and rewrite rules -->
-		<!-- getting "Failed to specify text in replace" means you need to escape & like so:  &amp;amp;-->
-		<!--
-		<antcontrib:runtarget target="urlrewritefilter.servlet.install" />
-		<urlrewrite name="root" note="MAP / TO DEFAULT VIEW" 
-			from="^/$" to="/index.cfm" type="forward"/>
-		<urlrewrite name="rootToPub" note="SERVE EVERYTHING FROM PUB"
-			from="/(.*)" to="/pub/$1" type="forward"/>
-		<urlrewriteout name="pubToRoot" from="^/pub/(.*)" to="/$1"/>
-		<urlrewriteout name="rootToContextPath" from="/(.*)" to="%{context-path}/$1" type="forward"/>
-		-->
+    	<antcontrib:for param="file">
+			<path><fileset dir="${src.dir}/cfspreadsheet/function" includes="*.cfm" /></path>
+			<sequential>
+				<antcontrib:var unset="true" name="_fname" />
+				<basename file="@{file}" property="_fname" />
+				<echo message="file:${_fname} : @{file}" />
+				<echo message="${war.target.dir}/WEB-INF/railo/library/function/${_fname}" />
+<!--
+				seems like server-wide func install gets overwritten ATM, go with web context instead
+				<echo message='&lt;cfinclude template="${src.dir}/cfspreadsheet/function/${_fname}" /&gt;'
+					file="${war.target.dir}/WEB-INF/lib/railo-server/context/library/function/${_fname}"/>
+-->
+				<echo message='&lt;cfinclude template="/cfspreadsheet/function/${_fname}" /&gt;'
+					file="${war.target.dir}/WEB-INF/railo/library/function/${_fname}"/>
+			</sequential>
+		</antcontrib:for>
 	</target>	
 	
 </project>
