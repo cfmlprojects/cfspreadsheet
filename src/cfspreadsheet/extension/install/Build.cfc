@@ -2,7 +2,7 @@
 
 	<cffunction name="build" returntype="struct" output="false">
 		<cfset var builddir = getDirectoryFromPath(getMetadata(this).path) & "../../../../build" />
-		<cf_antrunner antfile="#builddir#/build.xml" target="build.extension" resultsVar="result"/>
+		<cf_antrunner antfile="#builddir#/build.xml" target="build.extension" properties="#{'temp.dir':getTempDirectory()}#" resultsVar="result"/>
 		<cfreturn result />
 	</cffunction>
 
