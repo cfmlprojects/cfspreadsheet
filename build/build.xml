@@ -11,14 +11,14 @@
 				<antcontrib:var unset="true" name="_fname" />
 				<basename file="@{file}" property="_fname" />
 				<echo message="file:${_fname} : @{file}" />
-				<echo message="${war.target.dir}/WEB-INF/railo/library/function/${_fname}" />
+				<echo message="${war.target.dir}/WEB-INF/lucee/library/function/${_fname}" />
 <!--
 				seems like server-wide func install gets overwritten ATM, go with web context instead
 				<echo message='&lt;cfinclude template="${src.dir}/cfspreadsheet/function/${_fname}" /&gt;'
 					file="${war.target.dir}/WEB-INF/lib/railo-server/context/library/function/${_fname}"/>
 -->
 				<echo message='&lt;cfinclude template="/cfspreadsheet/function/${_fname}" /&gt;'
-					file="${war.target.dir}/WEB-INF/railo/library/function/${_fname}"/>
+					file="${war.target.dir}/WEB-INF/lucee/library/function/${_fname}"/>
 			</sequential>
 		</antcontrib:for>
 	</target>	
